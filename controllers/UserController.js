@@ -1,9 +1,16 @@
+const User = require('./../models/User')
 const catchAsync = require('./../middleware/errors/catchAsync')
 
 exports.getAllUsers = catchAsync(async (req, res) => {
+  const users = await User.find()
+
+
   res.status(200).json({
     status: "success",
-    message: "Yep you hit the getAllUsers controller",
+    results: users.length,
+    data: {
+      users
+    }
   });
 });
 
