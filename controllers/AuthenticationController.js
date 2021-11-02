@@ -11,6 +11,7 @@ const signToken = id => {
 
 exports.signIn = catchAsync(async (req, res, next) => {
   const { email, password } = req.body
+  console.log(req.body)
 
   // 1) Check if the email and password exist
     if(!email || !password ) {
@@ -34,6 +35,7 @@ exports.signIn = catchAsync(async (req, res, next) => {
 });
 
 exports.signUp = catchAsync(async (req, res) => {
+  console.log(req.body)
   const newUser = await User.create({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -58,7 +60,9 @@ exports.signUp = catchAsync(async (req, res) => {
 });
 
 exports.updatePassword = async (req, res) => {
-
+  const { id } = req.body
+  const user = await User.findById({ _id: id })
+  console.log(user)
 }
 
 exports.resetPassword = async (req, res) => {

@@ -31,6 +31,7 @@ exports.createUser = catchAsync(async (req, res) => {
 });
 
 exports.updateUser = catchAsync(async (req, res) => {
+  console.log(req)
   res.status(200).json({
     status: "success",
     message: "Yep you hit the updateUser controller",
