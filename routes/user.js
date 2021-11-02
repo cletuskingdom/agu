@@ -20,6 +20,20 @@ const { getAllUsers, updateUser, deleteUser, getUser, createUser } = require('./
 
 router.post('/signup', signUp)
 
+/**
+ * @swagger 
+ * /api/v1/users/signin:
+ *   post:
+ *     description: user login with email and password
+ *     parameters: 
+ *       - in :  body
+ *         name: userdata
+ *         type: string
+ *     responses:
+ *       200:
+ *         description:    Login
+ */
+
 router.post('/signin', signIn)
 
 router.route("/")
