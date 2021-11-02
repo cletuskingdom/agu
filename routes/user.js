@@ -7,8 +7,13 @@ router.post('/signup', signUp)
 
 router.post('/signin', signIn)
 
-router.route("/").get(getAllUsers).post(createUser);
+router.route("/")
+.get(getAllUsers)
+.post(createUser);
 
-router.route("/:id").patch(updateUser).delete(deleteUser).get(getUser);
+router.route("/:id").
+patch(updateUser)
+.delete(deleteUser)
+.get(getUser);
 
 module.exports = router;
