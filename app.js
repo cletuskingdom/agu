@@ -6,39 +6,52 @@ const swaggerUi = require('swagger-ui-express')
 
 const app = express()
 
-const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-          title: "Agulite Platform Backend API",
-          description: "The backend support for the Agulite front platform",
-          contact: {
-              name: "Favour Max-Oti",
-              email: "maxotif@gmail.com"
-          },
-          servers: ["http://localhost:4000/api/v1/users"]
-        }
+// const swaggerOptions = {
+//     swaggerDefinition: {
+//         info: {
+//           title: "Agulite Platform Backend API",
+//           description: "The backend support for the Agulite front platform",
+//           contact: {
+//               name: "Favour Max-Oti",
+//               email: "maxotif@gmail.com"
+//           },
+//           servers: ["http://localhost:4000/api/v1/users"]
+//         }
+//     },
+//     apis: ["app.js"]
+// }
+
+const swaggerOptions={
+    swaggerDefinition:{
+      infor:{
+        title:'library Api',
+        version:'1.0.0'
+      }
     },
-    apis: ["app.js"]
-}
-
-
+    
+    // apis:['app.js']//whwer to f=grt the documentaion from
+    apis:['./routes/*.js']
+  };
 //middleware
 app.use(express.json())
+
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
+console.log(swaggerDocs)
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 
-// routes
-/**
- * @swagger
- * /signup:
- * post:
- *  description: endpoint for registration of users
- *  responses:
- *  '201':
- *      description: The user has been successfully registered. This returns the object containing the user registration details
- *  
- * */ 
+// // routes
+// /**
+//  * @swagger
+//  * /signup:
+//  * post:
+//  *  description: endpoint for registration of users
+//  *  responses:
+//  *  '201':
+//  *      description: The user has been successfully registered. This returns the object containing the user registration details
+//  *  
+//  * */ 
 app.use('/api/v1/users', users)
 
 app.all('*', (req, res, next) => {
