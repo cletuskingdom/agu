@@ -2,15 +2,11 @@
   "name": "agulite-backend",
   "version": "1.0.0",
   "description": "Backend for the Agulite Platform",
-  "main": "server.js",
- // "scripts": {
- //   "test": "start",
- //   "start": "nodemon server.js"
- // },
-   "scripts": {
+  "main": "app.js",
+  "scripts": {
     "start": "nodemon server.js",
     "start:prod": "Set NODE_ENV=production & nodemon server.js"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lanepact/Agulite-Backend.git"
@@ -37,5 +33,8 @@
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }
