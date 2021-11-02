@@ -18,6 +18,7 @@ port = process.env.PORT || 4000;
 // .then(() => console.log(`DB connection successful!`))
 // .catch(err => console.log(err))
 
+
 const DB=process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD

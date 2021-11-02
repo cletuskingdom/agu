@@ -5,7 +5,7 @@ const { getAllUsers, updateUser, deleteUser, getUser, createUser } = require('./
 
 /**
  * @swagger 
- * /api/v1/users/signup:
+ * /api/v1/users/signUp:
  *   post:
  *     tag: user signup
  *     description: Enter your name,email,password,confirmPassword
