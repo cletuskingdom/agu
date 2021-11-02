@@ -1,43 +1,42 @@
 {
-  "name": "agulite-backend",
+  "name": "natours",
   "version": "1.0.0",
-  "description": "Backend for the Agulite Platform",
+  "description": "learning node,express and mongoDB",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "start:dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lanepact/Agulite-Backend.git"
-  },
-  "keywords": [
-    "Agu",
-    "Platform",
-    "Agulites",
-    "Lanepact"
-  ],
-  "author": "Lanepact",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Lanepact/Agulite-Backend/issues"
-  },
-  "homepage": "https://github.com/Lanepact/Agulite-Backend#readme",
+    "start": "nodemon server.js",
+    "start:prod": "Set NODE_ENV=production & nodemon server.js"
+},
+  "author": "AMADI PATRICK",
+  "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.12.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.12",
+    "lowdb": "^2.1.0",
+    "mongoose": "^5.13.7",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.1.25",
+    "nodemon": "^2.0.12",
     "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.1.6",
-    "validator": "^13.6.0"
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.2"
   },
-  "engines":{
+  "engines": {
     "node": ">=10.0.0"
   }
 }
+
